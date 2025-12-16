@@ -44,7 +44,7 @@ Used for maintaining the structured data representation of the campus.
 
 ---
 
-## File Format and Weighting Logic
+## File Format 
 
 The graph data is read from the `data/campus_graph.txt` file. Each line in the file defines a single directed edge and follows this format:
 [START_NODE] [END_NODE] [BASE_WEIGHT] [TERRAIN_TYPE]
