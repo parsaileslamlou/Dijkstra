@@ -125,7 +125,7 @@ The GeoJSON dataset is exported from **OpenStreetMap** using Overpass Turbo.
 
 This project began as a Dijkstra-based campus routing engine and was later extended to include:
 
-- **A\\*** search using a geographic heuristic
+- **A\*** search using a geographic heuristic
 - A benchmark harness comparing algorithms at scale
 - Expanded correctness tests for routing and graph validity
 - Real UCLA OSM GeoJSON integration for realistic routing behavior
