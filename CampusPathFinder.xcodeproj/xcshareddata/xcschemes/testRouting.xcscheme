@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6C3C77092EEE98E7009C2AAC"
-               BuildableName = "Dijkstra"
-               BlueprintName = "Dijkstra"
-               ReferencedContainer = "container:Dijkstra.xcodeproj">
+               BlueprintIdentifier = "6C9B839E2EFDCA75003A8AA6"
+               BuildableName = "testRouting"
+               BlueprintName = "testRouting"
+               ReferencedContainer = "container:CampusPathFinder.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,7 +36,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/parsaileslamlou/Desktop/Dijkstra/Dijkstra"
+      customWorkingDirectory = "/Users/parsaileslamlou/Desktop/CampusPathFinder/CampusPathFinder"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
@@ -46,10 +46,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6C3C77092EEE98E7009C2AAC"
-            BuildableName = "Dijkstra"
-            BlueprintName = "Dijkstra"
-            ReferencedContainer = "container:Dijkstra.xcodeproj">
+            BlueprintIdentifier = "6C9B839E2EFDCA75003A8AA6"
+            BuildableName = "testRouting"
+            BlueprintName = "testRouting"
+            ReferencedContainer = "container:CampusPathFinder.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -63,10 +63,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6C3C77092EEE98E7009C2AAC"
-            BuildableName = "Dijkstra"
-            BlueprintName = "Dijkstra"
-            ReferencedContainer = "container:Dijkstra.xcodeproj">
+            BlueprintIdentifier = "6C9B839E2EFDCA75003A8AA6"
+            BuildableName = "testRouting"
+            BlueprintName = "testRouting"
+            ReferencedContainer = "container:CampusPathFinder.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

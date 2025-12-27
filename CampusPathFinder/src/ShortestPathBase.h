@@ -1,6 +1,7 @@
-#ifndef DIJKSTRA_H
-#define DIJKSTRA_H
+#ifndef SHORTESTPATHBASE_H
+#define SHORTESTPATHBASE_H
 
+#include <chrono>
 #include <string>
 #include <iostream>
 #include <queue>
@@ -10,20 +11,20 @@
 #include <utility>
 #include "Graph.h"
 
-
-class Dijkstra {
+class ShortestPathBase {
     public:
         struct PathResult{
             bool reachable;
             std::vector<std::string> path;
             double weight;
+            double elapsedMs;   
         };
-        explicit Dijkstra(const std::string& filename);
-        PathResult computePath(const std::string& start, const std::string& end);
+        virtual PathResult computePath(const std::string& start, const std::string& end) = 0;
     
-    private:
+    protected:
         void Init();
         void printPath(const std::string& start, const std::string& end) const;
+    
         Graph graph;
         std::unordered_map<std::string, std::string> prev;
         std::unordered_map<std::string, bool> visited;
@@ -36,5 +37,4 @@ class Dijkstra {
             std::greater<PQItem>
         > pq;
 };
-
 #endif

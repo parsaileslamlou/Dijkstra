@@ -1,33 +1,19 @@
-#include <string>
-#include <iostream>
-#include <stack>
-#include <queue>
-#include <vector>
-#include <functional>
-#include <unordered_map>
-#include <utility>
-#include <limits>
+#include "ShortestPathBase.h"
 #include "Dijkstra.h"
+
 
 Dijkstra::Dijkstra(const std::string& filename){
     graph.loadFromFile(filename);
     Init();
 }
 
-
-void Dijkstra::Init(){ //Intializes all helper containers to default Dijkstra friendly values
-    for(const auto& pair : graph.getList()){
-        prev[pair.first] = "";
-        visited[pair.first] = false;
-        dist[pair.first] = std::numeric_limits<double>::infinity();
-    }
-   
-}
-
 Dijkstra::PathResult Dijkstra::computePath(const std::string& start, const std::string& end){ //Using Dijkstra's algorithm to find best path
+    auto startTime = std::chrono::high_resolution_clock::now();
+
     PathResult result;
     result.reachable = false;
     result.weight = 0.0;
+    result.elapsedMs = 0.0;
     
     if (!graph.containsNode(start) || !graph.containsNode(end)) {
         return result; // edge check
@@ -42,13 +28,16 @@ Dijkstra::PathResult Dijkstra::computePath(const std::string& start, const std::
     while(!pq.empty()){
         PQItem cur = pq.top();
         pq.pop();
-        
+
         double removed_dist = cur.first;
         std::string removed = cur.second;
-        
-        if (removed == end) break; //once removed fastest path found
-       
+
+        if (visited[removed]) continue;
+        if (removed_dist > dist[removed]) continue;
+
         visited[removed] = true;
+
+        if (removed == end) break;
         
         for(auto& edge : graph.getNeighbors(removed)){
             if(visited[edge.first]) continue;
@@ -79,22 +68,12 @@ Dijkstra::PathResult Dijkstra::computePath(const std::string& start, const std::
     result.reachable = true;
     result.path = forwardPath;
     result.weight = dist[end];
+    
+    auto endTime = std::chrono::high_resolution_clock::now();
+    result.elapsedMs =
+        std::chrono::duration<double, std::milli>(endTime - startTime).count();
     return result;
 }
 
-void Dijkstra::printPath(const std::string& start, const std::string& end) const{ //helper to print best path
-    std::string traversal = end;
-    std::stack<std::string> path;
-    
-    while(traversal != start){
-        path.push(traversal);
-        traversal = prev.at(traversal);
-    }
-    path.push(start);
-    
-    while(!path.empty()){
-        std::cout << path.top() << " ";
-        path.pop();
-    }
-}
+
 
